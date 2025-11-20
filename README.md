@@ -110,10 +110,9 @@ Typical results on NSL-KDD (binary classification):
 	•	Accuracy: 97%–99%
 	•	Strong detection across attack categories
 	•	Robust generalisation between training and test sets
-
-- Evaluated on NSL-KDD binary test set
-- ROC curve with AUC ≈ [fill in value from script]
-- ROC curve: see `docs/figures/roc_curve.png`
+ • Evaluated on NSL-KDD binary test set
+ • ROC curve with AUC ≈ [fill in value from script]
+ • ROC curve: see `docs/figures/roc_curve.png`
 
 A full classification report is generated automatically during training.
 
