@@ -55,13 +55,25 @@ This project demonstrates real-world applied ML skills relevant to cybersecurity
 <h2>3. Repository Structure</h2>
 
 <pre><code>├── data_preprocessing.py        # Cleans, encodes, and prepares the dataset
-├── model_training.py            # Trains Random Forest model and evaluates performance
-├── dashboard_app.py             # Streamlit dashboard for real-time predictions
-├── dataset.csv                  # Raw dataset
-├── dataset_clean.csv            # Cleaned, preprocessed dataset
-├── intrusion_model.pkl          # Saved machine learning model (generated after training)
-├── Untitled.ipynb               # Notebook with exploratory ML analysis
-└── README.md
+src/
+  data_preprocessing.py
+  model_training.py
+  dashboard_app.py
+  network_intrusion_detection.py   # optional legacy script
+data/
+  dataset.csv
+  dataset_clean.csv
+models/
+  intrusion_model.pkl              # saved trained model
+notebooks/
+  exploration_intrusion_ids.ipynb
+docs/figures/
+  ids_architecture.png
+  ids_pipeline.png
+  ids_dashboard.png
+README.md
+TECH_NATION_EVIDENCE.md
+requirements.txt
 </code></pre>
 
 <hr />
