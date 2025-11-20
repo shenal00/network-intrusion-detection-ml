@@ -1,187 +1,82 @@
-# Tech Nation Evidence – Evidence 3  
-## Machine Learning–Based Network Intrusion Detection System (IDS)  
-**Applicant:** Ibrahim Akintunde Akinyera  
-**Criterion:** Optional – Proven Technical Expertise and Contribution in Digital Technology
+# Technical Contribution Evidence – Machine Learning–Based Network Intrusion Detection System (IDS)
+
+## Overview
+
+This repository demonstrates a complete end-to-end machine learning Intrusion Detection System (IDS) developed by Ibrahim Akintunde Akinyera.  
+It is submitted as part of the **UK Global Talent Visa – Evidence 3 (Technical Contribution)** to showcase practical ability in cybersecurity analytics, data engineering, applied machine learning, and production-focused software development.
+
+The project implements a binary classification model capable of detecting malicious network activities using the NSL-KDD dataset, which is a recognised benchmark in academic and industry cybersecurity research.
 
 ---
 
-## 1. Summary of Evidence
+## Summary of Technical Contributions
 
-This evidence demonstrates my ability to design and implement an **end-to-end machine learning system** for **network intrusion detection**, combining:
+1. **End-to-End Machine Learning Engineering**
+   - Designed and implemented a full IDS pipeline covering dataset ingestion, preprocessing, encoding, feature engineering, model training, evaluation, and deployment.
+   - Structured the project in a production-style format, separating data, models, source code, and documentation for clarity and reproducibility.
 
-- Data preprocessing and feature engineering  
-- Supervised machine learning model development  
-- Evaluation using industry-standard metrics  
-- Model persistence for deployment  
-- A real-time, interactive dashboard built with **Streamlit**
+2. **Cybersecurity Domain Expertise**
+   - Applied machine learning techniques to a real-world network security problem.
+   - Used the NSL-KDD dataset, converting it into a binary classification problem suitable for operational intrusion detection (normal vs attack).
 
-The work is contained in this repository and was developed **entirely by me, Ibrahim Akintunde Akinyera**.
+3. **Model Development and Evaluation**
+   - Built a RandomForest model with competitive accuracy (~78%) on the official NSL-KDD test set.
+   - Performed data cleaning, one-hot encoding, and model optimisation.
+   - Exported the final model (`intrusion_model.pkl`) for integration into dashboards or monitoring systems.
 
----
+4. **Production-Ready Implementation**
+   - Delivered a clean and maintainable codebase with well-organised modules, including `src/train_ids_pipeline.py`, preprocessing scripts, and optional dashboard interface.
+   - Ensured the project can be reproduced by assessors through `requirements.txt` and detailed instructions.
 
-## 2. Problem Description
-
-Modern networks generate large volumes of traffic and log data. Manually detecting suspicious or malicious activity is:
-
-- Slow  
-- Inconsistent  
-- Difficult to scale  
-
-Traditional rule-based intrusion detection systems (IDS) struggle to keep up with evolving attack patterns and noisy data.
-
-There is a clear need for **data-driven, machine learning–based intrusion detection tools** that can classify network events as normal or suspicious in a reproducible, explainable way.
+5. **Documentation and Clarity**
+   - Provided full architectural diagrams, dataset breakdown, model pipeline documentation, and results.
+   - Ensured transparency for assessors by including clear commentary, data provenance, and model evaluation metrics.
 
 ---
 
-## 3. Solution Overview
+## Repository Structure (Relevant to Evidence Submission)
 
-I developed a **Machine Learning–based IDS** that:
+```
+data/
+  nsl_kdd_train_binary.csv        # Cleaned and encoded training data
+  nsl_kdd_test_binary.csv         # Cleaned and encoded test data
+  intrusion_model.pkl             # Trained RandomForest IDS model
 
-- Ingests network activity data from CSV files  
-- Cleans and preprocesses features (encoding, handling missing values)  
-- Trains a **Random Forest classifier** to distinguish normal vs. intrusion records  
-- Evaluates the model using accuracy, precision, recall and F1-score  
-- Saves the best model as a deployable artefact (`intrusion_model.pkl`)  
-- Exposes the model via an interactive **Streamlit dashboard** for real-time prediction
+src/
+  train_ids_pipeline.py           # End-to-end model training pipeline
+  data_preprocessing.py           # Dataset ingestion and encoding
+  dashboard_app.py                # Optional Streamlit interface
+  network_intrusion_detection.py  # Supporting ML logic
 
-The solution is implemented entirely in **Python**, using libraries such as:
+docs/
+  figures/
+    ids_architecture.png          # System architecture visual
+    ids_pipeline.png              # ML pipeline visual
+    ids_dashboard.png             # Dashboard flow visual
 
-- `pandas`, `numpy`  
-- `scikit-learn`  
-- `matplotlib`, `seaborn`  
-- `joblib`  
-- `streamlit`
-
----
-
-## 4. Technical Architecture
-
-The system is organised into clear, modular components:
-
-- `data_preprocessing.py` – data loading, cleaning, encoding and train/test split  
-- `model_training.py` – model training, evaluation, feature importance, and persistence  
-- `dashboard_app.py` – Streamlit-based web UI for uploading data and viewing predictions  
-- `dataset.csv` / `dataset_clean.csv` – raw and cleaned datasets  
-- `intrusion_model.pkl` – exported machine learning model  
-
-**Architecture flow:**
-
-1. **Data Layer**  
-   - Raw dataset (`dataset.csv`)  
-   - Cleaned dataset (`dataset_clean.csv`)
-
-2. **Preprocessing Layer**  
-   - Handling missing values  
-   - Encoding categorical variables  
-   - Splitting into training and test sets  
-
-3. **Model Layer**  
-   - Random Forest classifier  
-   - Model training and hyperparameters  
-   - Metrics: accuracy, precision, recall, F1-score  
-   - Confusion matrix and feature importance
-
-4. **Deployment Layer**  
-   - `intrusion_model.pkl` saved with `joblib`  
-   - `dashboard_app.py` exposes model through a Streamlit interface  
-
-5. **User Interaction Layer**  
-   - User uploads CSV  
-   - System runs predictions using the trained model  
-   - Dashboard displays classification outputs and basic analytics  
+README.md                         # Full project documentation
+TECH_NATION_EVIDENCE.md           # Current evidence summary
+```
 
 ---
 
-## 5. My Role and Technical Contribution
+## Evidence Relevance to Tech Nation Criteria
 
-I personally:
+This work aligns with the **“Technical Contribution”** pathway as defined by Tech Nation by demonstrating:
 
-- Designed the overall system architecture  
-- Wrote all Python modules in this repository  
-- Implemented the data preprocessing and feature engineering steps  
-- Selected and trained the Random Forest classifier  
-- Evaluated the model with appropriate metrics and diagnostics  
-- Implemented model persistence with `joblib`  
-- Built the Streamlit dashboard for real-time predictions  
-
-No external developers contributed to the core engineering work.  
-This is entirely my own technical design and implementation.
+- Significant high-level technical output in an applied domain (cybersecurity).
+- Independent design, development, and documentation of an ML system.
+- Strong understanding of algorithmic decision-making, data quality, and model evaluation.
+- Practical engineering approach with deployment-ready deliverables.
+- Clear contribution to advancing security-focused software capabilities.
 
 ---
 
-## 6. Impact and Relevance
+## Contact and Verification
 
-This project is relevant to Tech Nation’s digital technology criteria because it:
-
-- Demonstrates **advanced applied machine learning skills**  
-- Shows **cybersecurity and risk analytics** capability through intrusion detection  
-- Proves I can build **end-to-end systems** (data → model → deployment → UI)  
-- Uses **modern Python tooling** consistent with industry practice  
-- Is structured in a way that can be extended to real-world environments
-
-The work is directly relevant to roles such as:
-
-- Machine Learning Engineer  
-- Security Data Scientist  
-- Cybersecurity Analytics Engineer  
-- Risk Intelligence Engineer  
+**Ibrahim Akintunde Akinyera**  
+Machine Learning Engineer • Cybersecurity & Risk Analytics  
+GitHub: https://github.com/akinyeraakintunde  
+LinkedIn: https://www.linkedin.com/in/ibrahimakinyera/
 
 ---
-
-## 7. Supporting Materials in This Repository
-
-This repository contains:
-
-- **Source Code**  
-  - `data_preprocessing.py` – preprocessing pipeline  
-  - `model_training.py` – model training and evaluation  
-  - `dashboard_app.py` – Streamlit app for predictions  
-  - `Untitled.ipynb` – exploration and experimentation notebook  
-
-- **Datasets**  
-  - `dataset.csv` – raw network dataset  
-  - `dataset_clean.csv` – cleaned and processed dataset  
-
-- **Model Artefact**  
-  - `intrusion_model.pkl` – saved trained model  
-
-- **Documentation**  
-  - `README.md` – high-level project overview  
-  - `TECH_NATION_EVIDENCE.md` – this evidence narrative  
-
-Optionally, I may also add:
-
-- Confusion matrix and feature importance plots under `docs/figures/`  
-- Screenshots of the Streamlit dashboard  
-
----
-
-## 8. Relationship to Other Work (Supporting Evidence)
-
-In addition to this project, I have previously built:
-
-- A **Twitter Topic Classifier (NLP)** based on transformer models (BERT), used in my MSc Data Science dissertation.  
-  That work is provided as a **supporting document**, demonstrating a longer track record in machine learning and NLP.
-
-Together, these projects show a consistent, multi-year focus on **applied machine learning, cybersecurity, and risk analytics**.
-
----
-
-## 9. Repository Link
-
-(If public)
-
-GitHub: `https://github.com/akinyeraakintunde/network-intrusion-detection-ml`
-
----
-
-## 10. Conclusion
-
-This evidence demonstrates my ability to:
-
-- Design and implement a complete ML-based intrusion detection system  
-- Combine data engineering, model development, and deployment in a single solution  
-- Apply AI to cybersecurity and risk-related domains  
-- Produce high-quality, well-structured Python code and documentation  
-
-It provides strong support for the **Optional Criterion: Proven Technical Expertise and Contribution in Digital Technology** within the UK Global Talent Visa framework.
