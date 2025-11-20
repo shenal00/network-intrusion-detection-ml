@@ -144,3 +144,17 @@ It contains:
 	10.	License
 
 This project is released under the MIT License.
+
+## 11. API Contract (OpenAPI)
+
+This repository also includes an OpenAPI 3.0 specification for a future production API that exposes
+the IDS model as a REST service:
+
+- File: `openapi.yaml`
+- Endpoints:
+  - `GET /health` – API health check
+  - `GET /metadata` – model and dataset metadata
+  - `POST /predict` – binary intrusion prediction for one or more records
+
+This contract is suitable for implementation using FastAPI, Flask, or any OpenAPI-compatible stack,
+and demonstrates how the IDS model can be integrated into SOC/SIEM tooling or third-party platforms.
