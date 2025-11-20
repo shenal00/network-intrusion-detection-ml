@@ -5,11 +5,8 @@ It includes data preprocessing, model training, evaluation, saved model artefact
 
 This project is submitted as Evidence 3 – Technical Contribution for the UK Global Talent Visa (Digital Technology).
 
-⸻
 
 	1.	Project Overview
-
-⸻
 
 Modern networks generate large volumes of traffic, making manual monitoring insufficient for detecting malicious activity.
 This system uses supervised machine learning to classify network traffic into:
@@ -26,11 +23,7 @@ The IDS is built using:
 
 This repository demonstrates practical experience in machine learning, data engineering, and deployment workflows.
 
-⸻
-
 	2.	Repository Structure
-
-⸻
 
 network-intrusion-detection-ml/
 │
@@ -60,11 +53,7 @@ network-intrusion-detection-ml/
 ├── requirements.txt
 └── LICENSE
 
-⸻
-
 	3.	System Architecture
-
-⸻
 
 Architecture Diagram:
 docs/figures/ids_architecture.png
@@ -75,11 +64,7 @@ docs/figures/ids_pipeline.png
 Dashboard Workflow:
 docs/figures/ids_dashboard.png
 
-⸻
-
 	4.	Installation Guide
-
-⸻
 
 Clone the repository:
 
@@ -90,11 +75,7 @@ Install dependencies:
 
 pip install -r requirements.txt
 
-⸻
-
 	5.	Training the Model
-
-⸻
 
 Run the complete end-to-end training pipeline:
 
@@ -107,11 +88,9 @@ This will:
 	4.	Print evaluation metrics
 	5.	Save the trained model to data/intrusion_model.pkl
 
-⸻
 
 	6.	Running the Prediction Dashboard
 
-⸻
 
 Start the dashboard:
 
@@ -123,11 +102,9 @@ Features:
 	•	Downloadable results file
 	•	Summary of normal vs attack records
 
-⸻
 
 	7.	Model Performance
 
-⸻
 
 Typical results on NSL-KDD (binary classification):
 	•	Accuracy: 97%–99%
@@ -136,11 +113,8 @@ Typical results on NSL-KDD (binary classification):
 
 A full classification report is generated automatically during training.
 
-⸻
 
 	8.	Evidence for UK Global Talent Visa
-
-⸻
 
 This repository includes:
 
@@ -154,11 +128,7 @@ It contains:
 	•	Diagrams and artefacts
 	•	Source code references
 
-⸻
-
 	9.	Key Technical Features
-
-⸻
 
 	•	End-to-end ML IDS system
 	•	Clean and modular Python code
@@ -167,10 +137,7 @@ It contains:
 	•	Interactive prediction dashboard
 	•	Real-world dataset (NSL-KDD)
 
-⸻
 
 	10.	License
-
-⸻
 
 This project is released under the MIT License.
