@@ -54,8 +54,8 @@ This project demonstrates real-world applied ML skills relevant to cybersecurity
 
 <h2>3. Repository Structure</h2>
 
-<pre><code>├── data_preprocessing.py        # Cleans, encodes, and prepares the dataset
-src/
+<pre><code>
+  src/
   data_preprocessing.py
   model_training.py
   dashboard_app.py
