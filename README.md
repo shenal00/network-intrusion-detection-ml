@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
   <meta charset="UTF-8" />
   <title>Machine Learning–Based Network Intrusion Detection System (IDS)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
