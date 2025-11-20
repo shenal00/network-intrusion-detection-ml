@@ -1,0 +1,228 @@
+openapi: 3.0.3
+info:
+  title: Network Intrusion Detection API
+  version: 1.0.0
+  description: |
+    REST API for a Machine Learning–based Network Intrusion Detection System (IDS).
+    The API exposes endpoints for health checks and intrusion prediction using a
+    trained RandomForest model on the NSL-KDD dataset (binary: normal vs attack).
+
+    This API is part of the technical contribution evidence for Ibrahim Akintunde
+    Akinyera's UK Global Talent (Digital Technology) application.
+
+  contact:
+    name: Ibrahim Akintunde Akinyera
+    url: https://github.com/akinyeraakintunde
+    email: (optional)
+
+servers:
+  - url: https://api.example.com/ids
+    description: Production IDS API (example)
+  - url: http://localhost:8000
+    description: Local development
+
+tags:
+  - name: Health
+    description: Health and metadata endpoints
+  - name: Prediction
+    description: Intrusion detection inference endpoints
+
+paths:
+  /health:
+    get:
+      tags:
+        - Health
+      summary: Health check
+      description: Simple health endpoint to verify that the API is reachable.
+      responses:
+        '200':
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+
+  /metadata:
+    get:
+      tags:
+        - Health
+      summary: Model and dataset metadata
+      description: |
+        Returns metadata about the deployed IDS model, including model type,
+        training dataset, and version information.
+      responses:
+        '200':
+          description: Metadata describing the current model and configuration.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetadataResponse'
+
+  /predict:
+    post:
+      tags:
+        - Prediction
+      summary: Predict intrusion for one or more network records
+      description: |
+        Accepts one or more pre-processed network traffic records and returns
+        a binary classification for each: 0 = normal, 1 = attack.
+
+        Features must match the encoded feature vector used during training
+        (for example, the same columns as `nsl_kdd_train_binary.csv` excluding
+        the `binary_label` target column).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PredictionRequest'
+      responses:
+        '200':
+          description: Successful prediction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredictionResponse'
+        '400':
+          description: Invalid input payload or missing required features
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal server error during prediction
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: ok
+        timestamp:
+          type: string
+          format: date-time
+          example: 2025-11-20T10:15:30Z
+
+    MetadataResponse:
+      type: object
+      properties:
+        model_name:
+          type: string
+          example: RandomForestClassifier
+        model_version:
+          type: string
+          example: v1.0.0
+        framework:
+          type: string
+          example: scikit-learn
+        trained_on_dataset:
+          type: string
+          example: NSL-KDD (binary: normal vs attack)
+        features_count:
+          type: integer
+          example: 118
+        created_at:
+          type: string
+          format: date-time
+          example: 2025-11-15T09:30:00Z
+
+    PredictionRequest:
+      type: object
+      required:
+        - records
+      properties:
+        records:
+          type: array
+          description: |
+            List of encoded feature vectors. Each record must contain the same
+            features used during model training (e.g., all numeric columns from
+            `nsl_kdd_train_binary.csv` except `binary_label`).
+          items:
+            $ref: '#/components/schemas/FeatureVector'
+      example:
+        records:
+          - {
+              "f1": 0.01,
+              "f2": 123.0,
+              "f3": 0.0,
+              "f4": 1.0
+            }
+
+    FeatureVector:
+      type: object
+      description: |
+        A single encoded feature vector representing one network connection.
+        In practice, this object will include all numeric feature columns
+        used during training (e.g., duration, src_bytes, dst_bytes, protocol_type_*,
+        service_*, flag_*, etc.).
+      additionalProperties:
+        type: number
+      example:
+        f1: 0.01
+        f2: 123.0
+        f3: 0.0
+        f4: 1.0
+
+    PredictionResponse:
+      type: object
+      properties:
+        predictions:
+          type: array
+          description: List of predictions, aligned by index to the input records.
+          items:
+            $ref: '#/components/schemas/PredictionItem'
+        model_version:
+          type: string
+          example: v1.0.0
+      example:
+        predictions:
+          - {
+              "index": 0,
+              "label": 0,
+              "label_name": "normal",
+              "score_attack": 0.12
+            }
+          - {
+              "index": 1,
+              "label": 1,
+              "label_name": "attack",
+              "score_attack": 0.94
+            }
+        model_version: v1.0.0
+
+    PredictionItem:
+      type: object
+      properties:
+        index:
+          type: integer
+          description: Zero-based index corresponding to the input record.
+          example: 0
+        label:
+          type: integer
+          description: Binary prediction (0 = normal, 1 = attack).
+          example: 1
+        label_name:
+          type: string
+          description: Human-readable label.
+          example: attack
+        score_attack:
+          type: number
+          format: float
+          description: Probability score for the positive (attack) class.
+          example: 0.9453
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: Invalid input format
+        details:
+          type: string
+          example: records field is required and must be a non-empty array
